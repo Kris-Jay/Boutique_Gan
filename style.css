@@ -1,0 +1,445 @@
+/* resets */
+
+/* TO-DO
+-smooth animations and transitions between cart/credit/cash/receipt windows
+-more/different hover animations on cards
+-animation on cart icon when adding item to cart
+-make sure sidenav cart works well on mobile -- use media query to change height of item-container
+-refine logo a bit */
+
+p {
+  padding: 2px;
+  margin: 2px;
+  /* text-align: center; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background concept by Manuel Pinto */
+  background: linear-gradient(
+    -45deg,
+    rgb(142, 173, 207),
+    #eeeeee,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header-items {
+  height: 30px;
+  font-size: 25px;
+  padding: 0px 20px;
+  font-family: "Cutive Mono", monospace;
+  margin: 10px 0px;
+}
+
+.main1 {
+  display: flex;
+}
+
+.side-nav-icons {
+  height: 50px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  color: black;
+  top: 0;
+  z-index: 3;
+  border-bottom: black solid 0.5px;
+  background: linear-gradient(
+    -45deg,
+    rgb(142, 173, 207),
+    #23a6d5,
+    rgb(161, 196, 202)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.header1 {
+  text-align: center;
+  margin: 70px 0px 40px 0px;
+  font-family: "Cutive Mono", monospace;
+  transition: all 2s ease-in-out;
+}
+
+.header2 {
+  position: fixed;
+}
+
+.header1:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.head-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.main-item-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  /* max-width: 1000px; */
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.optionStyle {
+  border: white 1px solid;
+  width: 200px;
+  font-family: "Cutive Mono", monospace;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  z-index: 0;
+  border-radius: 21px 21px 0px 0px;
+  margin: 0px 10px 20px 10px;
+  font-size: 18px;
+}
+
+.description {
+  font-size: 12px;
+}
+
+.optionStyle:hover {
+  border: 1px solid black;
+  transition: all 0.2s ease-in-out;
+}
+
+.product-pic {
+  height: 180px;
+  width: auto;
+  border-radius: 20px;
+}
+
+.cart-style {
+  color: white;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  max-height: 95vh;
+  width: 0;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: "Cutive Mono", monospace;
+  border-left: 1px white solid;
+  background: linear-gradient(
+    -45deg,
+    rgb(142, 173, 207),
+    #eeeeee,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 50px;
+  margin-right: 20px;
+}
+
+.checkout-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 4;
+}
+
+.add {
+  border: none;
+  text-decoration: none;
+  font-family: "Cutive Mono", monospace;
+  font-size: 12px;
+  padding: 10px 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.add:hover {
+  box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.delete {
+  border: none;
+  text-decoration: none;
+  background: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.close-form {
+  background: none;
+  position: absolute;
+  left: 70%;
+  bottom: 85%;
+  border: none;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.close-form:hover {
+  color: black;
+}
+
+.delete:hover {
+  color: #f1f1f1;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.63);
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.money-form {
+  font-family: "Cutive Mono", monospace;
+  width: 50%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  padding: 20px;
+  overflow: auto;
+  background: linear-gradient(-45deg, rgb(142, 173, 207), #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.form-form {
+  font-family: "Cutive Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  padding: 20px;
+  color: white;
+}
+
+.popup-div {
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  padding: 20px;
+}
+
+.button-style {
+  font-family: "Cutive Mono", monospace;
+}
+
+#expiration {
+  padding: 8px;
+}
+
+.cash-checkout {
+  color: white;
+}
+.cash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.63);
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.cash-inner-div {
+  justify-content: space-around;
+  width: 75%;
+  color: white;
+  min-height: 0px;
+  overflow: hidden;
+}
+
+.cash-total {
+  max-height: 50%;
+  overflow: auto;
+  border: 1px gray dotted;
+  color: white;
+}
+.cash-stp {
+  max-height: 50%;
+  overflow: auto;
+  border: 1px gray dotted;
+  color: white;
+}
+
+.credit-inner-div {
+  justify-content: space-around;
+  width: 75%;
+  color: white;
+  min-height: 0px;
+  overflow: hidden;
+}
+
+.credit-item-container {
+  max-height: 50%;
+  overflow: auto;
+  border: 1px gray dotted;
+  color: white;
+}
+
+.cstp-div {
+  max-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px gray dotted;
+}
+
+.receipt-box {
+  border: dotted 1px black;
+  background-color: white;
+}
+
+/* .receipt-div {
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25%;
+} */
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.cart-container::-webkit-scrollbar-track {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  padding: 2px 0;
+  background-color: rgb(142, 173, 207);
+}
+
+.hide {
+  display: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.fixed-footer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  font-family: "Cutive Mono", monospace;
+  background-color: white;
+  clear: both;
+  z-index: 4;
+}
+
+.foot-right {
+  float: right;
+  display: block;
+  padding: 0px 5px;
+  font-size: 12px;
+}
+
+.foot-left {
+  float: left;
+  display: block;
+  padding: 0px 5px;
+  font-size: 12px;
+}
+
+/* 
+@media screen and (max-width: 768px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+} */
